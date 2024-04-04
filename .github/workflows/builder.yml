@@ -16,11 +16,8 @@ jobs:
 
     - uses: actions/checkout@v2
 
-    - name: Set up Python2.7
-      uses: actions/setup-python@v3
-      id: setup-python2
+    - uses: LizardByte/setup-python-action@master
       with:
-        python-version: 2.7
-        update-environment: false
+        python-version: '2.7'
 
-    - run: python2 --version
+    - run: python --version

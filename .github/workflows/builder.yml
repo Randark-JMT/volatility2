@@ -21,3 +21,7 @@ jobs:
         python-version: '2.7'
 
     - run: python --version
+
+    - run: python -m pip install --upgrade pip certifi
+
+    - run: python -m easy_install certifi pycryptodome yara PPIL distorm3 openpyxl==2.3.0 pyinstaller==3.2

@@ -1,0 +1,29 @@
+name: Publish Docker image
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build_volatility_for_windows:
+    name: build volatility to exe format for windows
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - run: python2 --version
+
+    - name: Package Application
+      uses: JackMcKew/pyinstaller-action-windows@main
+      with:
+        path: ./
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: name-of-artifact
+        path: src/dist/windows

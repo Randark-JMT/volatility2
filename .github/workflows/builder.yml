@@ -7,7 +7,7 @@ on:
 jobs:
   build_volatility_for_windows:
     name: build volatility to exe format for windows
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     permissions:
       contents: read
       packages: write
